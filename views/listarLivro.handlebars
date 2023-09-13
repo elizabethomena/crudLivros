@@ -1,0 +1,20 @@
+<h1>Livros Cadastrados</h1>
+<div class="container">
+    {{#each books}}
+    <div class="item">
+        <h2>{{this.nomeL}}</h2>
+        <div class="info">
+            <p>{{this.autor}}</p>
+            <p>R${{this.preco}}</p>
+        </div>
+        <div class="actions">
+            <a href="/books/{{this.id}}" class="details-btn">Ver detalhes</a>
+            <a href="/books/edit/{{this.id}}" class="edit-btn">Editar</a>
+
+            <form action="/books/delete/{{this.id}}" method="post">
+                <input type="submit" value="Excluir" class="delete-btn">
+            </form>
+        </div>
+    </div>
+    {{/each}}
+</div>
